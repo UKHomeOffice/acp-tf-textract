@@ -1,3 +1,3 @@
 # Contribution guide
 
-Describe how people can contribute to this project.
+Please open an issue, create a branch and then pull request to contribute to this repository.
