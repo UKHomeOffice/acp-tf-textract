@@ -14,7 +14,6 @@ Module usage:
 */
 
 data "aws_iam_policy" "AmazonTextractFullAccess" {
-  name = var.iam_user_policy_name
   arn  = "arn:aws:iam::aws:policy/AmazonTextractFullAccess"
 }
 
