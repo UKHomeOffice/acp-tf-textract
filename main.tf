@@ -33,7 +33,7 @@ resource "aws_iam_user" "textract_iam_user" {
 resource "aws_iam_policy_attachment" "textract_iam_user_policy_attachment" {
   name       = format("%s-%s-%s", var.environment, var.textract_iam_user, var.iam_user_policy_name)
   users      = [aws_iam_user.textract_iam_user.name]
-  policy_arn = data.aws_iam_policy.AmazonTextractFullAccess
+  policy_arn = data.aws_iam_policy.AmazonTextractFullAccess.arn
 }
 
 resource "aws_iam_access_key" "textract_iam_user_access_key" {
