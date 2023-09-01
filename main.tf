@@ -4,7 +4,8 @@ Module usage:
          source = "git::https://github.com/UKHomeOffice/acp-tf-textract?ref=main"
          textract_iam_user = "fake-textract-username"
          iam_user_policy_name = "fake-textract-policy"
-         // base64 encoded public gpg key for secret output 
+         // base64 encoded public noarmor gpg (binary version) key which will
+         // be used to secure the secret key output
          gpg_key = "LS0t...."
          environment = var.environment
          tags = {
@@ -14,7 +15,7 @@ Module usage:
 */
 
 data "aws_iam_policy" "AmazonTextractFullAccess" {
-  arn  = "arn:aws:iam::aws:policy/AmazonTextractFullAccess"
+  arn = "arn:aws:iam::aws:policy/AmazonTextractFullAccess"
 }
 
 resource "aws_iam_user" "textract_iam_user" {
